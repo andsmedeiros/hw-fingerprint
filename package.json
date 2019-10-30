@@ -1,8 +1,14 @@
 {
   "name": "hw-fingerprint",
   "version": "1.0.0",
-  "main": "hw-fingerprint.js",
   "license": "MIT",
+  "homepage": "https://github.com/andsmedeiros/hw-fingerprint",
+  "repository": "github:andsmedeiros/hw-fingerprint",
+  "author": {
+    "name": "André Medeiros",
+    "email": "andsmedeiros@gmail.com"
+  },
+  "main": "hw-fingerprint.js",
   "type": "module",
   "engines": {
     "node": ">=8 || >= 10"
