@@ -1,0 +1,13 @@
+{
+  "name": "hw-fingerprint",
+  "version": "1.0.0",
+  "main": "hw-fingerprint.js",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=8 || >= 10"
+  },
+  "dependencies": {
+    "systeminformation": "^4.14.11"
+  }
+}
