@@ -1,6 +1,6 @@
 {
   "name": "hw-fingerprint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "Hardware-based fingerprint for Node and Electron",
   "homepage": "https://github.com/andsmedeiros/hw-fingerprint",

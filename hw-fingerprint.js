@@ -10,7 +10,7 @@ const {
   mem,
   osInfo,
   blockDevices
-} = require('si')
+} = require('systeminformation')
 
 const FINGERPRINT = (async function(){
   const { manufacturer, model, serial, uuid } = await system()
