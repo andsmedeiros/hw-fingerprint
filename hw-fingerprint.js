@@ -68,4 +68,4 @@ function fingerprint(){
   return FINGERPRINT
 }
 
-export { fingerprint }
+module.exports = { fingerprint }

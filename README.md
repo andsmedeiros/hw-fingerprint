@@ -1,5 +1,7 @@
 # hw-fingerprint
 
+Hardware-based fingerprint for Node and Electron
+
 ## About
 
 This library provides a `fingerprint()` function that produces a 512-bit signature based on the host machine's hardware information, suitable for use in Electron or Node client apps that require authentication against a server.
