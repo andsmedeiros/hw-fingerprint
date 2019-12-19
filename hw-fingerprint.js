@@ -12,7 +12,7 @@ const {
   blockDevices
 } = require('systeminformation')
 
-const FINGERPRINT = (async function(){
+async function generateFingerprint(){
   const { manufacturer, model, serial, uuid } = await system()
   const { vendor, version: biosVersion, releaseDate } = await bios()
   const {
@@ -62,9 +62,11 @@ const FINGERPRINT = (async function(){
   const fingerprintString = fingerprintSegments.join('')
   const fingerprintHash = createHash('sha512').update(fingerprintString)
   return fingerprintHash.digest()
-})()
+}
 
-function fingerprint(){
+let FINGERPRINT
+async function fingerprint(){
+  FINGERPRINT = FINGERPRINT || await generateFingerprint()
   return FINGERPRINT
 }
 
