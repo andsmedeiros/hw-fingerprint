@@ -12,7 +12,7 @@ const {
   blockDevices
 } = require('systeminformation')
 
-const FINGERPRINT = (async function(){
+const FINGERPRINTING_INFO = (async function() {
   const { manufacturer, model, serial, uuid } = await system()
   const { vendor, version: biosVersion, releaseDate } = await bios()
   const {
@@ -35,9 +35,9 @@ const FINGERPRINT = (async function(){
     .filter(({ type, removable }) => type === 'disk' && !removable)
     .map(({ model, serial }) => model + serial)
 
-  const fingerprintSegments = [
+  return {
     EOL,
-    endianness(),
+    endianess: endianness(),
     manufacturer,
     model,
     serial,
@@ -57,15 +57,23 @@ const FINGERPRINT = (async function(){
     memTotal,
     platform,
     arch,
-    ...hdds
-  ]
-  const fingerprintString = fingerprintSegments.join('')
+    hdds
+  }
+})()
+
+const FINGERPRINT = (async function() {
+  const fingerprintingInfo = await FINGERPRINTING_INFO
+  const fingerprintString = Object.values(fingerprintingInfo).join('')
   const fingerprintHash = createHash('sha512').update(fingerprintString)
   return fingerprintHash.digest()
 })()
 
-function fingerprint(){
+function getFingerprint() {
   return FINGERPRINT
 }
 
-module.exports = { fingerprint }
+function getFingerprintingInfo() {
+  return FINGERPRINTING_INFO
+}
+
+module.exports = { getFingerprint, getFingerprintingInfo }

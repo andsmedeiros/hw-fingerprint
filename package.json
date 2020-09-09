@@ -10,7 +10,6 @@
     "email": "andsmedeiros@gmail.com"
   },
   "main": "hw-fingerprint.js",
-  "type": "module",
   "engines": {
     "node": ">=8 || >= 10"
   },
