@@ -23,7 +23,7 @@ const FINGERPRINTING_INFO = (async function() {
   const {
     manufacturer: cpuManufacturer,
     brand,
-    speedmax,
+    speedMax,
     cores,
     physicalCores,
     socket
@@ -50,7 +50,7 @@ const FINGERPRINTING_INFO = (async function() {
     boardSerial,
     cpuManufacturer,
     brand,
-    speedmax,
+    speedMax: speedMax.toFixed(2),
     cores,
     physicalCores,
     socket,
