@@ -1,6 +1,6 @@
 {
   "name": "hw-fingerprint",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Hardware-based fingerprint for Node and Electron",
   "homepage": "https://github.com/andsmedeiros/hw-fingerprint",
@@ -11,8 +11,9 @@
   },
   "main": "hw-fingerprint.js",
   "engines": {
-    "node": ">=8 || >= 10"
+    "node": ">=14.17"
   },
+  "type": "module",
   "dependencies": {
     "systeminformation": "^5.9.9"
   }
