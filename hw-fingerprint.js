@@ -34,8 +34,8 @@ export const FINGERPRINTING_INFO = await (async function() {
     const { platform, arch } = await osInfo()
     const devices = await blockDevices()
     const hdds = devices
-    .filter(({ type, removable }) => type === 'disk' && !removable)
-    .map(({ model, serial }) => model + serial)
+        .filter(({ type, removable }) => type === 'disk' && !removable)
+        .map(({ model, serial }) => model + serial)
     
     return {
         EOL,
