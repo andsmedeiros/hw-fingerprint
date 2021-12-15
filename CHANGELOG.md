@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.1
+
+- Updates README.md
+
 ## v3.0.0
 
 - Switches from CommonJS to ESM
