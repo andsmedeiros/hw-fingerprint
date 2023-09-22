@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.1.1
+
+- v3.1.0 was published with extraneous files, this release corrects it
+
 ## v3.1.0
 
 - Updates `systeminformation` to version 5.21.8
