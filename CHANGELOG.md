@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.1.0
+
+- Updates `systeminformation` to version 5.21.8
+- Adds a `FINGERPRINTING_PARAMETERS` constant export that holds `Object.keys(FINGERPRINTING_INFO)`
+- Adds better type definitions with JSDoc
+- Updates README.md
+
 ## v3.0.1
 
 - Updates README.md
