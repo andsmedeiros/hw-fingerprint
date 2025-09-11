@@ -1,4 +1,3 @@
-import { Buffer } from 'node:buffer'
 import { createHash } from 'node:crypto'
 import { EOL, endianness } from 'node:os'
 import {
@@ -10,7 +9,6 @@ import {
     osInfo,
     blockDevices
 } from 'systeminformation'
-const { keys } = Object
 
 /**
  * @typedef {Object} FingerprintingInfo An object that holds all the system information
@@ -98,7 +96,7 @@ export const FINGERPRINTING_INFO = await (async function() {
  * to be considered during fingerprinting
  * @type {string[]}
  */
-export const FINGERPRINTING_PARAMETERS = keys(FINGERPRINTING_INFO)
+export const FINGERPRINTING_PARAMETERS = Object.keys(FINGERPRINTING_INFO)
 
 /**
 * Calculates the fingerprint for given system parameters, ordered as 'FINGERPRINTING_INFO` properties
@@ -111,7 +109,12 @@ function calculateFingerprint(parameters) {
     return fingerprintHash.digest()
 }
 
-const cachedFingerprints = {}
+/**
+ * Stores fingerprints indexed by their cache key, which is a stable string representation
+ * of the parameters used to calculate each fingerprint
+ * @type {Map<string, Buffer>}
+ */
+const cachedFingerprints = new Map
 
 /**
  * Calculates the 512-bit fingerprint using this system's parameters.
@@ -128,10 +131,10 @@ export function getFingerprint({ only = FINGERPRINTING_PARAMETERS, except = [] }
     const parameters = FINGERPRINTING_PARAMETERS
         .filter(key => only.includes(key) && !except.includes(key))
     const cacheKey = parameters.join('')
-    if(cacheKey in cachedFingerprints === false) {
-        cachedFingerprints[cacheKey] = calculateFingerprint(parameters)
+    if(!cachedFingerprints.has(cacheKey)) {
+        cachedFingerprints.set(cacheKey,  calculateFingerprint(parameters))
     }
-    return cachedFingerprints[cacheKey]
+    return cachedFingerprints.get(cacheKey)
 }
 
 /**
