@@ -1,5 +1,14 @@
 # Changelog
 
+## v3.2.1
+
+- Updates dependencies
+
+## v3.2.0
+
+- Swaps internal fingerprint cache implementation from a POJO to `Map`.
+- Updates dependencies
+
 ## v3.1.1
 
 - v3.1.0 was published with extraneous files, this release corrects it
@@ -22,3 +31,4 @@
 - Makes `getFingerprint()` function accept an optional object with two properties: `only` and `except`. Each is an array of properties to filter which system parameters to use in fingerprint calculation.
 - Corrects `FINGERPRINTING_INFO` property for system endianness being incorrectly spelled `endianess`
 - Provided JSDoc annotations
+
