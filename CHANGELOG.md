@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.2.2
+
+- v3.2.1 was published with outdated `package.json`, this release corrects it
+
 ## v3.2.1
 
 - Updates dependencies
@@ -31,4 +35,3 @@
 - Makes `getFingerprint()` function accept an optional object with two properties: `only` and `except`. Each is an array of properties to filter which system parameters to use in fingerprint calculation.
 - Corrects `FINGERPRINTING_INFO` property for system endianness being incorrectly spelled `endianess`
 - Provided JSDoc annotations
-
