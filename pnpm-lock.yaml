@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       systeminformation:
-        specifier: ^5.31.6
-        version: 5.31.6
+        specifier: ^5.31.17
+        version: 5.31.17
 
 packages:
 
-  systeminformation@5.31.6:
-    resolution: {integrity: sha512-Uv2b2uGGM6ns+26czgW2cYRabYdnswM0ddSOOlryHOaelzsmDSet1iM/NT7VOYxW8x/BW+HkY+b1Ve2pLTSGSA==}
+  systeminformation@5.31.17:
+    resolution: {integrity: sha512-TvFA9iwDWlMjqZVlKIJ0Cy+Zgm9ttlMx0SMRwJDMNKyhlEKWBMb3+WRwDi/3dvHdWbexpos4Osp4U49p5WjB5g==}
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
 snapshots:
 
-  systeminformation@5.31.6: {}
+  systeminformation@5.31.17: {}

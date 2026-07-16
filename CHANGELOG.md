@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.2.3
+
+- Updates dependencies
+
 ## v3.2.2
 
 - v3.2.1 was published with outdated `package.json`, this release corrects it
